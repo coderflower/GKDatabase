@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5B-Q7-xfJ" userLabel="打开数据库等.">
+                                <rect key="frame" x="0.0" y="231" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-1H-xWV">
+                                        <rect key="frame" x="33" y="3" width="75" height="30"/>
+                                        <state key="normal" title="打开数据库"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4a-g8-P41">
+                                        <rect key="frame" x="158" y="3" width="60" height="30"/>
+                                        <state key="normal" title="创建表格"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wA-O6-OUm">
+                                        <rect key="frame" x="268" y="3" width="60" height="30"/>
+                                        <state key="normal" title="插入数据"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="E4a-g8-P41" firstAttribute="centerY" secondItem="P5B-Q7-xfJ" secondAttribute="centerY" id="6xe-qb-eDN"/>
+                                    <constraint firstItem="E4a-g8-P41" firstAttribute="centerX" secondItem="P5B-Q7-xfJ" secondAttribute="centerX" id="CME-kx-JnL"/>
+                                    <constraint firstItem="8wA-O6-OUm" firstAttribute="leading" secondItem="E4a-g8-P41" secondAttribute="trailing" constant="50" id="ClX-yZ-5rE"/>
+                                    <constraint firstAttribute="height" constant="35" id="Ee1-oX-KeG"/>
+                                    <constraint firstItem="Dva-1H-xWV" firstAttribute="centerY" secondItem="P5B-Q7-xfJ" secondAttribute="centerY" id="Grh-Rb-hxk"/>
+                                    <constraint firstItem="8wA-O6-OUm" firstAttribute="centerY" secondItem="P5B-Q7-xfJ" secondAttribute="centerY" id="hcN-sE-zoy"/>
+                                    <constraint firstItem="E4a-g8-P41" firstAttribute="leading" secondItem="Dva-1H-xWV" secondAttribute="trailing" constant="50" id="swn-pC-fOh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvT-eV-ccY" userLabel="查询">
+                                <rect key="frame" x="0.0" y="316" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wi-vE-yct">
+                                        <rect key="frame" x="18" y="3" width="90" height="30"/>
+                                        <state key="normal" title="查询所有数据"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOY-ju-GdA">
+                                        <rect key="frame" x="158" y="3" width="60" height="30"/>
+                                        <state key="normal" title="数据总数"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m40-KX-jms">
+                                        <rect key="frame" x="268" y="3" width="60" height="30"/>
+                                        <state key="normal" title="模糊查找"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="GJm-Fh-S7n"/>
+                                    <constraint firstItem="iOY-ju-GdA" firstAttribute="leading" secondItem="2Wi-vE-yct" secondAttribute="trailing" constant="50" id="Mmt-EI-cbk"/>
+                                    <constraint firstItem="2Wi-vE-yct" firstAttribute="centerY" secondItem="TvT-eV-ccY" secondAttribute="centerY" id="amk-bl-Hgo"/>
+                                    <constraint firstItem="iOY-ju-GdA" firstAttribute="centerX" secondItem="TvT-eV-ccY" secondAttribute="centerX" id="ekW-D5-sQ5"/>
+                                    <constraint firstItem="m40-KX-jms" firstAttribute="leading" secondItem="iOY-ju-GdA" secondAttribute="trailing" constant="50" id="fOF-Of-pF4"/>
+                                    <constraint firstItem="m40-KX-jms" firstAttribute="centerY" secondItem="TvT-eV-ccY" secondAttribute="centerY" id="hfX-Ct-Xa3"/>
+                                    <constraint firstItem="iOY-ju-GdA" firstAttribute="centerY" secondItem="TvT-eV-ccY" secondAttribute="centerY" id="uDA-4A-a2N"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhy-eF-UAT" userLabel="查询">
+                                <rect key="frame" x="0.0" y="401" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-bO-mPS">
+                                        <rect key="frame" x="48" y="3" width="60" height="30"/>
+                                        <state key="normal" title="更新数据"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwC-r3-gfw">
+                                        <rect key="frame" x="158" y="3" width="60" height="30"/>
+                                        <state key="normal" title="清空表格"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-Or-Xd6">
+                                        <rect key="frame" x="268" y="3" width="60" height="30"/>
+                                        <state key="normal" title="删除表格"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="QBM-Or-Xd6" firstAttribute="leading" secondItem="WwC-r3-gfw" secondAttribute="trailing" constant="50" id="0hz-i0-PqS"/>
+                                    <constraint firstItem="8d6-bO-mPS" firstAttribute="centerY" secondItem="Mhy-eF-UAT" secondAttribute="centerY" id="QvC-6D-5GS"/>
+                                    <constraint firstItem="WwC-r3-gfw" firstAttribute="centerX" secondItem="Mhy-eF-UAT" secondAttribute="centerX" id="fEM-Ok-dph"/>
+                                    <constraint firstItem="WwC-r3-gfw" firstAttribute="centerY" secondItem="Mhy-eF-UAT" secondAttribute="centerY" id="h28-pd-TMb"/>
+                                    <constraint firstAttribute="height" constant="35" id="xG2-Vz-2oW"/>
+                                    <constraint firstItem="QBM-Or-Xd6" firstAttribute="centerY" secondItem="Mhy-eF-UAT" secondAttribute="centerY" id="xP6-7J-bHk"/>
+                                    <constraint firstItem="WwC-r3-gfw" firstAttribute="leading" secondItem="8d6-bO-mPS" secondAttribute="trailing" constant="50" id="xdG-Th-IiD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P5B-Q7-xfJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="2u8-W9-lGo"/>
+                            <constraint firstItem="TvT-eV-ccY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7m9-pt-94c"/>
+                            <constraint firstItem="Mhy-eF-UAT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BGY-GP-f6h"/>
+                            <constraint firstAttribute="trailing" secondItem="Mhy-eF-UAT" secondAttribute="trailing" id="CX7-sr-ubx"/>
+                            <constraint firstAttribute="trailing" secondItem="P5B-Q7-xfJ" secondAttribute="trailing" id="DnP-bQ-DxJ"/>
+                            <constraint firstItem="TvT-eV-ccY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eid-xI-13F"/>
+                            <constraint firstItem="Mhy-eF-UAT" firstAttribute="top" secondItem="TvT-eV-ccY" secondAttribute="bottom" constant="50" id="LcF-c8-9ft"/>
+                            <constraint firstItem="TvT-eV-ccY" firstAttribute="top" secondItem="P5B-Q7-xfJ" secondAttribute="bottom" constant="50" id="WGb-G2-nvT"/>
+                            <constraint firstItem="P5B-Q7-xfJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wig-0e-Xi5"/>
+                            <constraint firstAttribute="trailing" secondItem="TvT-eV-ccY" secondAttribute="trailing" id="b2c-kt-wXu"/>
+                            <constraint firstItem="P5B-Q7-xfJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oU6-K3-QUO"/>
+                            <constraint firstItem="TvT-eV-ccY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wah-Zq-Cxf"/>
+                            <constraint firstAttribute="trailing" secondItem="P5B-Q7-xfJ" secondAttribute="trailing" id="zqi-Cp-IWS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2u8-W9-lGo"/>
+                                <exclude reference="DnP-bQ-DxJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="317.5" y="284.5"/>
+        </scene>
+    </scenes>
+</document>
