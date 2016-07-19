@@ -233,18 +233,20 @@ static sqlite3 *database;
 
 #pragma mark -
 #pragma mark - =============== 数据更新 ===============
-- (void) updateObject:(Class)className oldValues:(NSArray *)oldValues conditionType:(QueryType)conditionType newValues:(NSArray *)newValues {
+- (BOOL) updateObject:(Class)className oldValues:(NSArray *)oldValues conditionType:(QueryType)conditionType newValues:(NSArray *)newValues {
    
     if (![self openDatabase]) {
         NSLog(@"请先执行[[GKDatabaseManager sharedManager]openDatabase];打开数据库 ");
-        return ;
+        return NO;
     }
 
     if (![self dataProcessingWithArray:oldValues class:className]) {
         NSLog(@"更新内容有误");
+        return NO;
     }
     if (![self dataProcessingWithArray:newValues class:className]) {
         NSLog(@"更新条件有误");
+        return NO;
     }
     // 拼接sql语句
     NSMutableString *sqlString = [[NSMutableString alloc] initWithFormat:@"update %@ set ",NSStringFromClass([className class])];
@@ -258,7 +260,7 @@ static sqlite3 *database;
     
     if (conditionType == 0) {
         NSLog(@"%@ 选择错误",[self typeToString:conditionType]);
-        return;
+        return NO;
     } else {
         [[self dataProcessingWithArray:oldValues class:className] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
@@ -269,7 +271,7 @@ static sqlite3 *database;
 
     NSRange rang = NSMakeRange(sqlString.length-[self typeToString:conditionType].length-1, [self typeToString:conditionType].length+1);
     [sqlString deleteCharactersInRange:rang];
-    [self executeSqlString:sqlString];
+    return [self executeSqlString:sqlString];
 }
 - (NSString *)typeToString:(QueryType)type{
     switch (type) {
@@ -406,7 +408,7 @@ static sqlite3 *database;
 }
 
 /// 清空数据库某表格的内容
-- (BOOL)deleteAllDataWithTableName:(id)className {
+- (BOOL)clearTableWithName:(id)className {
 
     if (![self openDatabase]) {
         NSLog(@"请先执行[[GKDatabaseManager sharedManager]openDatabase];打开数据库");

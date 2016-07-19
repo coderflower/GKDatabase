@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger ,GKDatabaseSelectLocation){
  *  @param conditionType   条件类型 例 OR 或者 AND
  *  @param newValues 更新条件 例 @【@"id=5"，@"name=zhangsan"】
  */
-- (void) updateObject:(Class)className oldValues:(NSArray *)oldValues conditionType:(QueryType)conditionType newValues:(NSArray *)newValues;
+- (BOOL) updateObject:(Class)className oldValues:(NSArray *)oldValues conditionType:(QueryType)conditionType newValues:(NSArray *)newValues;
 
 #pragma mark -
 #pragma mark - =============== 删除数据 ===============
@@ -143,7 +143,7 @@ typedef NS_ENUM(NSInteger ,GKDatabaseSelectLocation){
  *
  *  @return 清空结果
  */
-- (BOOL)deleteAllDataWithTableName:(id)className;
+- (BOOL)clearTableWithName:(id)className;
 
 /**
  *  删除数据库表格

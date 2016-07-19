@@ -14,8 +14,10 @@
 		83A148321D3DD925000FA797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A148311D3DD925000FA797 /* Assets.xcassets */; };
 		83A148351D3DD925000FA797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A148331D3DD925000FA797 /* LaunchScreen.storyboard */; };
 		83A1483E1D3DD9A9000FA797 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A1483D1D3DD9A9000FA797 /* libsqlite3.0.tbd */; };
-		83A148491D3DFE44000FA797 /* GKDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A148461D3DFE44000FA797 /* GKDatabaseManager.m */; };
-		83A1484A1D3DFE44000FA797 /* GKObjcProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A148481D3DFE44000FA797 /* GKObjcProperty.m */; };
+		83A1484F1D3DFFB7000FA797 /* GKDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1484C1D3DFFB7000FA797 /* GKDatabaseManager.m */; };
+		83A148501D3DFFB7000FA797 /* GKObjcProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1484E1D3DFFB7000FA797 /* GKObjcProperty.m */; };
+		83A148561D3E00EE000FA797 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A148551D3E00EE000FA797 /* Person.m */; };
+		83A148591D3E0121000FA797 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A148581D3E0121000FA797 /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +32,15 @@
 		83A148341D3DD925000FA797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83A148361D3DD925000FA797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83A1483D1D3DD9A9000FA797 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		83A148451D3DFE44000FA797 /* GKDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKDatabaseManager.h; path = "GKDatabase/未命名文件夹/GKDatabaseManager.h"; sourceTree = SOURCE_ROOT; };
-		83A148461D3DFE44000FA797 /* GKDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKDatabaseManager.m; path = "GKDatabase/未命名文件夹/GKDatabaseManager.m"; sourceTree = SOURCE_ROOT; };
-		83A148471D3DFE44000FA797 /* GKObjcProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKObjcProperty.h; path = "GKDatabase/未命名文件夹/GKObjcProperty.h"; sourceTree = SOURCE_ROOT; };
-		83A148481D3DFE44000FA797 /* GKObjcProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKObjcProperty.m; path = "GKDatabase/未命名文件夹/GKObjcProperty.m"; sourceTree = SOURCE_ROOT; };
+		83A1484B1D3DFFB7000FA797 /* GKDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDatabaseManager.h; sourceTree = "<group>"; };
+		83A1484C1D3DFFB7000FA797 /* GKDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDatabaseManager.m; sourceTree = "<group>"; };
+		83A1484D1D3DFFB7000FA797 /* GKObjcProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKObjcProperty.h; sourceTree = "<group>"; };
+		83A1484E1D3DFFB7000FA797 /* GKObjcProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKObjcProperty.m; sourceTree = "<group>"; };
+		83A148511D3DFFD1000FA797 /* GKDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDatabase.h; sourceTree = "<group>"; };
+		83A148541D3E00EE000FA797 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		83A148551D3E00EE000FA797 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		83A148571D3E0121000FA797 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		83A148581D3E0121000FA797 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				83A1483C1D3DD956000FA797 /* GKDatabase */,
+				83A148521D3E0054000FA797 /* Demo */,
 				83A148281D3DD925000FA797 /* AppDelegate.h */,
 				83A148291D3DD925000FA797 /* AppDelegate.m */,
 				83A1482B1D3DD925000FA797 /* ViewController.h */,
@@ -93,12 +101,32 @@
 		83A1483C1D3DD956000FA797 /* GKDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				83A148471D3DFE44000FA797 /* GKObjcProperty.h */,
-				83A148481D3DFE44000FA797 /* GKObjcProperty.m */,
-				83A148451D3DFE44000FA797 /* GKDatabaseManager.h */,
-				83A148461D3DFE44000FA797 /* GKDatabaseManager.m */,
+				83A1484B1D3DFFB7000FA797 /* GKDatabaseManager.h */,
+				83A1484C1D3DFFB7000FA797 /* GKDatabaseManager.m */,
+				83A1484D1D3DFFB7000FA797 /* GKObjcProperty.h */,
+				83A1484E1D3DFFB7000FA797 /* GKObjcProperty.m */,
+				83A148511D3DFFD1000FA797 /* GKDatabase.h */,
 			);
 			path = GKDatabase;
+			sourceTree = "<group>";
+		};
+		83A148521D3E0054000FA797 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				83A148531D3E0054000FA797 /* models */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		83A148531D3E0054000FA797 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				83A148541D3E00EE000FA797 /* Person.h */,
+				83A148551D3E00EE000FA797 /* Person.m */,
+				83A148571D3E0121000FA797 /* Student.h */,
+				83A148581D3E0121000FA797 /* Student.m */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +199,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A148561D3E00EE000FA797 /* Person.m in Sources */,
+				83A1484F1D3DFFB7000FA797 /* GKDatabaseManager.m in Sources */,
 				83A1482D1D3DD925000FA797 /* ViewController.m in Sources */,
 				83A1482A1D3DD925000FA797 /* AppDelegate.m in Sources */,
-				83A148491D3DFE44000FA797 /* GKDatabaseManager.m in Sources */,
+				83A148591D3E0121000FA797 /* Student.m in Sources */,
 				83A148271D3DD925000FA797 /* main.m in Sources */,
-				83A1484A1D3DFE44000FA797 /* GKObjcProperty.m in Sources */,
+				83A148501D3DFFB7000FA797 /* GKObjcProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

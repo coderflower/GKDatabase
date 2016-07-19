@@ -23,14 +23,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-1H-xWV">
                                         <rect key="frame" x="33" y="3" width="75" height="30"/>
                                         <state key="normal" title="打开数据库"/>
+                                        <connections>
+                                            <action selector="openDatabase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T5T-3g-plk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4a-g8-P41">
                                         <rect key="frame" x="158" y="3" width="60" height="30"/>
                                         <state key="normal" title="创建表格"/>
+                                        <connections>
+                                            <action selector="createTabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DnY-wP-YxC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wA-O6-OUm">
                                         <rect key="frame" x="268" y="3" width="60" height="30"/>
                                         <state key="normal" title="插入数据"/>
+                                        <connections>
+                                            <action selector="insertData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wVr-K5-gAc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,14 +59,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wi-vE-yct">
                                         <rect key="frame" x="18" y="3" width="90" height="30"/>
                                         <state key="normal" title="查询所有数据"/>
+                                        <connections>
+                                            <action selector="selectAllData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MaW-VD-Y1p"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOY-ju-GdA">
                                         <rect key="frame" x="158" y="3" width="60" height="30"/>
                                         <state key="normal" title="数据总数"/>
+                                        <connections>
+                                            <action selector="selectTotalCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGR-fC-sXH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m40-KX-jms">
                                         <rect key="frame" x="268" y="3" width="60" height="30"/>
                                         <state key="normal" title="模糊查找"/>
+                                        <connections>
+                                            <action selector="vagueSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i2F-L3-Hqd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,20 +89,29 @@
                                     <constraint firstItem="iOY-ju-GdA" firstAttribute="centerY" secondItem="TvT-eV-ccY" secondAttribute="centerY" id="uDA-4A-a2N"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhy-eF-UAT" userLabel="查询">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhy-eF-UAT">
                                 <rect key="frame" x="0.0" y="401" width="375" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-bO-mPS">
                                         <rect key="frame" x="48" y="3" width="60" height="30"/>
                                         <state key="normal" title="更新数据"/>
+                                        <connections>
+                                            <action selector="updateRows:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IU1-RF-I9Q"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwC-r3-gfw">
                                         <rect key="frame" x="158" y="3" width="60" height="30"/>
                                         <state key="normal" title="清空表格"/>
+                                        <connections>
+                                            <action selector="clearTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Vi-F0-eAp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-Or-Xd6">
                                         <rect key="frame" x="268" y="3" width="60" height="30"/>
                                         <state key="normal" title="删除表格"/>
+                                        <connections>
+                                            <action selector="deleteTabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9im-1r-xaf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,6 +125,20 @@
                                     <constraint firstItem="WwC-r3-gfw" firstAttribute="leading" secondItem="8d6-bO-mPS" secondAttribute="trailing" constant="50" id="xdG-Th-IiD"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dax-K5-FTL">
+                                <rect key="frame" x="50" y="486" width="75" height="30"/>
+                                <state key="normal" title="单条件查询"/>
+                                <connections>
+                                    <action selector="singleConditionSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yaw-3b-F5e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFn-uh-6PY">
+                                <rect key="frame" x="235" y="486" width="90" height="30"/>
+                                <state key="normal" title="指定条件删除"/>
+                                <connections>
+                                    <action selector="deleteRow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9O1-yv-ed7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -110,9 +151,13 @@
                             <constraint firstItem="Mhy-eF-UAT" firstAttribute="top" secondItem="TvT-eV-ccY" secondAttribute="bottom" constant="50" id="LcF-c8-9ft"/>
                             <constraint firstItem="TvT-eV-ccY" firstAttribute="top" secondItem="P5B-Q7-xfJ" secondAttribute="bottom" constant="50" id="WGb-G2-nvT"/>
                             <constraint firstItem="P5B-Q7-xfJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wig-0e-Xi5"/>
+                            <constraint firstItem="Dax-K5-FTL" firstAttribute="top" secondItem="Mhy-eF-UAT" secondAttribute="bottom" constant="50" id="YrM-mT-dCU"/>
                             <constraint firstAttribute="trailing" secondItem="TvT-eV-ccY" secondAttribute="trailing" id="b2c-kt-wXu"/>
+                            <constraint firstItem="Dax-K5-FTL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="itT-gf-Rdu"/>
+                            <constraint firstItem="yFn-uh-6PY" firstAttribute="top" secondItem="Mhy-eF-UAT" secondAttribute="bottom" constant="50" id="jXq-P4-Thg"/>
                             <constraint firstItem="P5B-Q7-xfJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oU6-K3-QUO"/>
                             <constraint firstItem="TvT-eV-ccY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wah-Zq-Cxf"/>
+                            <constraint firstAttribute="trailing" secondItem="yFn-uh-6PY" secondAttribute="trailing" constant="50" id="x79-nC-yob"/>
                             <constraint firstAttribute="trailing" secondItem="P5B-Q7-xfJ" secondAttribute="trailing" id="zqi-Cp-IWS"/>
                         </constraints>
                         <variation key="default">
