@@ -33,8 +33,9 @@ static GKObjcProperty *databaseFile;
  *  @return 属性类型列表
  */
 + (NSArray *)getUserNeedOCPropertyTypeListWithClass:(id)className {
+    
     if (className) {
-        [self getObject].delegate = className;
+        [self getObject].delegate = [[[className class] alloc]init];
         if ([[self getObject].delegate respondsToSelector:@selector(notSaveToDatabaseFormAttributesList)]) {
             
             NSArray *userNeedAttributeList = [self getUserNeedAttributeListWithClass:className];
@@ -55,7 +56,6 @@ static GKObjcProperty *databaseFile;
                     NSString *name = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
                     // 转换为Objective C 字符串
                     NSString *type = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
-                    
                     if ([name isEqualToString:userNeedAttribute]) {
                         [tempArrayM addObject:[self getAttributesWith:type]];
                     }
@@ -116,7 +116,7 @@ static GKObjcProperty *databaseFile;
 /// 获取属性名列表
 + (NSArray *)getUserNeedAttributeListWithClass:(id)className {
     if (className) {
-        [self getObject].delegate = className;
+        [self getObject].delegate = [[[className class]alloc]init];
         if ([[self getObject].delegate respondsToSelector:@selector(notSaveToDatabaseFormAttributesList)]) {
             
             NSArray *arr = [[self getObject].delegate  notSaveToDatabaseFormAttributesList];

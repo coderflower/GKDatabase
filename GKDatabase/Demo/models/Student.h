@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface Student : NSObject
+#import "GKDatabase.h"
+@interface Student : NSObject<GKObjcPropertyDelegate>
 @property(nonatomic, copy) NSString *name;
 @property(nonatomic, assign) NSInteger age;
 @property(nonatomic, assign) CGFloat score;
 @property(nonatomic, strong) NSArray *books;
+- (NSArray *)notSaveToDatabaseFormAttributesList;
 @end

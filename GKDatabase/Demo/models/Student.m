@@ -9,5 +9,8 @@
 #import "Student.h"
 
 @implementation Student
-
+/// 不存入数据库
+- (NSArray *)notSaveToDatabaseFormAttributesList{
+    return @[@"score"];
+}
 @end
