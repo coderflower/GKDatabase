@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger ,GKDatabaseSelectLocation){
 /**
  *  根据类名创建表格,默认主键为t_default_id
  *
- *  @param className  类名t_default_id
+ *  @param className  类名[Person class]
  */
 - (BOOL)creatTableWithClassName:(id)className;
 
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger ,GKDatabaseSelectLocation){
  *  该方法会将模型对象插入到对象类型所对应的表格中 
  *  @param object 模型对象
  */
-- (void)insertDataFromObject:(id)object;
+- (BOOL)insertDataFromObject:(id)object;
 
 #pragma mark -
 #pragma mark - =============== 查询数据 ===============

@@ -25,8 +25,6 @@
 @interface GKObjcProperty : NSObject
 
 @property (nonatomic,strong) id<GKObjcPropertyDelegate> delegate;
-+ (GKObjcProperty *)getObject;
-
 /**
  *  获取属性名列表 例 name
  *

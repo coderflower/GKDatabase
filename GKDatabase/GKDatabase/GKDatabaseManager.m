@@ -30,6 +30,7 @@ static sqlite3 *database;
     }
     // 1. 获取创建sql语句
     NSString * sqlString = [self getCreateTableSQLStringWithClass:className];
+    NSLog(@"%@",sqlString);
     // 2. 执行语句
     return [self executeSqlString:sqlString];
 }
@@ -66,16 +67,13 @@ static sqlite3 *database;
 #pragma mark -
 #pragma mark - =============== 插入数据 ===============
 /// 插入数据
-- (void)insertDataFromObject:(id)object {
-    // 打开数据库
-    [self openDatabase];
+- (BOOL)insertDataFromObject:(id)object {
     // 创建可变字符串用于拼接sql语句
     NSMutableString * sqlString = [NSMutableString stringWithFormat:@"insert into %@ (",NSStringFromClass([object class])];
-    [[GKObjcProperty getSQLProperties:[object class]] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    [[GKObjcProperty getUserNeedAttributeListWithClass:[object class]] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         // 拼接字段名
-        [sqlString appendFormat:@"%@,",key];
+        [sqlString appendFormat:@"%@,",obj];
     }];
-    
     // 去掉后面的逗号
     [sqlString deleteCharactersInRange:NSMakeRange(sqlString.length-1, 1)];
     // 拼接values
@@ -84,26 +82,29 @@ static sqlite3 *database;
     // 拼接字段值
     [[GKObjcProperty getSQLProperties:[object class]] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         // 拼接属性
-        if ([obj isEqualToString:@"text"]) {
+        if ([object valueForKey:key]){
+            if ([obj isEqualToString:@"text"]) {
+                [sqlString appendFormat:@"'%@',",[object valueForKey:key]];
+            } else if ([obj isEqualToString:@"customArr"] || [obj isEqualToString:@"customDict"]) { // 数组字典转处理
+                NSData * data = [NSJSONSerialization dataWithJSONObject:[object valueForKey:key] options:0 error:nil];
+                NSString * jsonString = [[NSString alloc] initWithData:data encoding:(NSUTF8StringEncoding)];
+                [sqlString appendFormat:@"'%@',",jsonString];
+            }else if ([obj isEqualToString:@"blob"]){ // NSData处理
+                NSString * jsonString = [[NSString alloc] initWithData:[object valueForKey:key] encoding:(NSUTF8StringEncoding)];
+                [sqlString appendFormat:@"'%@',",jsonString];
+            }else {
+                [sqlString appendFormat:@"%@,",[object valueForKey:key]];
+            }
+        }else {// 没有值就存NULL
             [sqlString appendFormat:@"'%@',",[object valueForKey:key]];
-        } else if ([obj isEqualToString:@"customArr"] || [obj isEqualToString:@"customDict"]) { // 数组字典转处理
-            NSData * data = [NSJSONSerialization dataWithJSONObject:[object valueForKey:key] options:0 error:nil];
-            NSString * jsonString = [[NSString alloc] initWithData:data encoding:(NSUTF8StringEncoding)];
-            [sqlString appendFormat:@"'%@',",jsonString];
-        }else if ([obj isEqualToString:@"blob"]){ // NSData处理
-            NSString * jsonString = [[NSString alloc] initWithData:[object valueForKey:key] encoding:(NSUTF8StringEncoding)];
-            [sqlString appendFormat:@"'%@',",jsonString];
-        }else {
-            [sqlString appendFormat:@"%@,",[object valueForKey:key]];
         }
     }];
     // 去掉后面的逗号
     [sqlString deleteCharactersInRange:NSMakeRange(sqlString.length-1, 1)];
     // 添加后面的括号
     [sqlString appendFormat:@");"];
-    NSLog(@"%@",sqlString);
     // 执行语句
-    [self executeSqlString:sqlString];
+    return [self executeSqlString:sqlString];
 }
 
 #pragma mark -
@@ -217,7 +218,7 @@ static sqlite3 *database;
             [models addObject:objc];
         }
     }
-    return models;
+    return [models copy];
 }
 - (int)intForColumn:(int)index stmt:(sqlite3_stmt *)stmt {
     return sqlite3_column_int(stmt, index);
@@ -317,7 +318,7 @@ static sqlite3 *database;
  *  判断属性是否存在
  *
  *  @param string 属性名
- *  @param cls    类名
+ *  @param className    类名
  *
  *  @return YES 表示 存在
  */
@@ -339,7 +340,7 @@ static sqlite3 *database;
  *  组合成新的字符串
  *
  *  @param arr 要组合的数组
- *  @param cls 类名
+ *  @param className 类名
  *
  *  @return 新字符串
  */

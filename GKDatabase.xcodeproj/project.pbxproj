@@ -101,11 +101,11 @@
 		83A1483C1D3DD956000FA797 /* GKDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				83A148511D3DFFD1000FA797 /* GKDatabase.h */,
 				83A1484B1D3DFFB7000FA797 /* GKDatabaseManager.h */,
 				83A1484C1D3DFFB7000FA797 /* GKDatabaseManager.m */,
 				83A1484D1D3DFFB7000FA797 /* GKObjcProperty.h */,
 				83A1484E1D3DFFB7000FA797 /* GKObjcProperty.m */,
-				83A148511D3DFFD1000FA797 /* GKDatabase.h */,
 			);
 			path = GKDatabase;
 			sourceTree = "<group>";

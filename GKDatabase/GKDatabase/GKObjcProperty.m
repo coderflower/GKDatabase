@@ -191,11 +191,11 @@ static GKObjcProperty *databaseFile;
     if ([String isEqualToString:@"double"] || [String isEqualToString:@"float"]) {
         return @"real";
     }
-    // 数组转自定义类型
+    // 自定义数组标记
     if ([String isEqualToString:@"NSArray"] || [String isEqualToString:@"NSMutableArray"]) {
         return @"customArr";
     }
-    // 字典转自定义类型
+    // 自定义字典标记
     if ([String isEqualToString:@"NSDictionary"] || [String isEqualToString:@"NSMutableDictionary"]) {
         return @"customDict";
     }

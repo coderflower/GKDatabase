@@ -41,12 +41,14 @@
 }
 - (IBAction)insertData:(id)sender {
     
-    for ( NSInteger i = 0; i < 100; i++) {
+    for ( NSInteger i = 0; i < 10; i++) {
         Person * p = [[Person alloc]init];
         p.name = [NSString stringWithFormat:@"花菜ChrisCai%lu",i];
         p.age = arc4random() % 100;
         // 向表格中插入数据
-        [[GKDatabaseManager sharedManager] insertDataFromObject:p];
+        if ([[GKDatabaseManager sharedManager] insertDataFromObject:p]) {
+            NSLog(@"插入成功");
+        };
     }
     for ( NSInteger i = 0; i < 100; i++) {
         Student * s = [[Student alloc]init];
