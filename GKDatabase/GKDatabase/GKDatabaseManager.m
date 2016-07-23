@@ -229,7 +229,8 @@ static sqlite3 *database;
 }
 
 - (NSString *)textForColumn:(int)index stmt:(sqlite3_stmt *)stmt {
-    return [NSString stringWithFormat:@"%s",sqlite3_column_text(stmt, index)];
+    return [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, index)];
+    
 }
 
 #pragma mark -
