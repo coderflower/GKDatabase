@@ -39,4 +39,5 @@ NSArray * resultArr = [[GKDatabaseManager sharedManager] selectObject:[Person cl
 // 删除Person表中所有age>50的记录
 [[GKDatabaseManager sharedManager] deleteObject:[Person class] withString:@"age > 50"]
 ```
-更多详细使用,请看Demo~,
+更多使用详情,请看Demo~
+原理篇请看这里[简书地址](http://www.jianshu.com/p/0e598147debc)
