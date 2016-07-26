@@ -403,7 +403,7 @@ static sqlite3 *database;
     // 获取类的属性和sql类型
     NSDictionary * propertsDict = [GKObjcProperty getSQLProperties:[object class]];
     // 拼接字符串
-    NSMutableString * sqlString = [NSMutableString stringWithFormat:@"delete from %@ where ",[object class]];
+    NSMutableString * sqlString = [NSMutableString string];
     [propertsDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull value, BOOL * _Nonnull stop) {
         if ([value isEqualToString:@"integer"] || [value isEqualToString:@"real"]) {
             [sqlString appendFormat:@"%@ = %@ and",key , [object valueForKey:key]];
@@ -414,8 +414,10 @@ static sqlite3 *database;
     // 删除最后多余的and
     NSRange rang = NSMakeRange(sqlString.length-@"and".length-1, @"and".length+1);
     [sqlString deleteCharactersInRange:rang];
-    return [self executeSqlString:sqlString];
+    
+    return [self deleteObject:[object class] withString:sqlString];
 }
+
 /// 数据删除
 - (BOOL)deleteObject:(Class)className withString:(NSString *)string {
     // 判断数据库有没有打开
