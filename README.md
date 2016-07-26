@@ -1,4 +1,4 @@
-####基于SQLite3轻量级封装,一行代码实现增删改查
+###基于SQLite3轻量级封装,一行代码实现增删改查
 
 ```objc
 // 打开数据库
@@ -39,5 +39,20 @@ NSArray * resultArr = [[GKDatabaseManager sharedManager] selectObject:[Person cl
 // 删除Person表中所有age>50的记录
 [[GKDatabaseManager sharedManager] deleteObject:[Person class] withString:@"age > 50"]
 ```
+
+###新增方法
+```objc
+/**
+ *  从表格中移除完全匹配对象属性的行
+ *
+ *  @param object 模型对象
+ *
+ *  @return 删除结果
+ */
+- (BOOL)deleteObject:(id)object; 
+// 执行指自定义的sql语句,并返回结果
+- (BOOL)executeSqlString:(NSString *)sqlString;
+```
+
 更多使用详情,请看Demo~
 原理篇请看这里[简书地址](http://www.jianshu.com/p/0e598147debc)
